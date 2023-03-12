@@ -1,0 +1,3 @@
+topics to search:
+- primitives vs non primitives datatypes.
+- Difference between switch and if-else statements, and which one is faster?
