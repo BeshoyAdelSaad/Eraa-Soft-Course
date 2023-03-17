@@ -1,3 +1,35 @@
 topics to search:
-- primitives vs non primitives datatypes.
+- primitives vs non primitives datatypes: 
+The answer:
+A primitive type has always a value, while non-primitive types can be null . A primitive type starts with a lowercase letter, while non-primitive types starts with an uppercase letter. The size of a primitive type depends on the data type, while non-primitive types have all the same size.
+
+Another answer : 
+Non-Primitive Data Types
+Non-primitive data types are called reference types because they refer to objects.
+
+The main difference between primitive and non-primitive data types are:
+
+Primitive types are predefined (already defined) in Java. Non-primitive types are created by the programmer and is not defined by Java (except for String).
+Non-primitive types can be used to call methods to perform certain operations, while primitive types cannot.
+A primitive type has always a value, while non-primitive types can be null.
+A primitive type starts with a lowercase letter, while non-primitive types starts with an uppercase letter.
+The size of a primitive type depends on the data type, while non-primitive types have all the same size.
+
+##############################################################################################################
+
 - Difference between switch and if-else statements, and which one is faster?
+
+
+The answer : 
+Main Difference between If-else and Switch Case
+The main differences between the two are:
+
+The if-else statement is used to choose between two options, but the switch case statement is used to choose between numerous options.
+
+If the condition inside the if block is false, the statement inside the else block is executed. If the condition inside the switch statement is false, the default statements are run.
+
+If-else values are determined by constraints, whereas switch case values are determined by user preferences.
+
+It's difficult to make changes to if-else statements because it's time-consuming to figure out where the change needs to be made. Switch statements, on the other hand, are simple to change since they are easy to trace.
+
+For numerous statements, you can use several if statements. For numerous statements in Switch, you only have one expression.
