@@ -1,55 +1,5 @@
 <?php
 
-    // for($i = 1; $i < 11; $i++)
-    // {
-    //     $text = "-";
-    //     if($i == 10) $text = "";
-    //     echo $i . $text;
-        
-    // }
-
-    // echo "<br>";
-
-    // for($x = 1; $x <= 6; $x++)
-    // {
-    //     echo  "<br>";
-    //     for($y = 1; $y < $x; $y++)
-    //     echo "*" . " " ; 
-    // }
-
-    
-    // echo "<br>";
-
-    // for($x = 1; $x <= 6; $x++)
-    // {
-
-    //     for($y = 1; $y < $x; $y++)
-
-    //     echo "*"; 
-    // }
-#######################################################
-
-// $names = ['Ahmed', 'Kaream', 'Ali', 'Omar'];
-// $count = count($names);
-// for($i = 0; $i < $count; $i++)
-// {
-//     echo $names[$i] . "<br>";
-// }
-
-// echo '<hr>';
-
-// $newNames =[];
-
-// for($i = $count -1; $i >= 0 ; $i--)
-// {
-//     $newNames [] = $names[$i];
-//     echo $names[$i] . "<br>";
-// }
-// print_r($newNames);
-// echo '<hr>';
-
-#########################################################
-
 $color = array("Blue", "Red", "Black", "Green", "Gray", "White");
 
 echo '<h2>$color = array("Blue", "Red", "Black", "Green", "Gray", "White");</h2>';
