@@ -1,0 +1,124 @@
+
+Tobics to search:
+
+1- PHP array_map() Function:
+Definition and Usage
+array_map — Applies the callback to the elements of the given arrays
+
+The array_map() function sends each value of an array to a user-made function, 
+and returns an array with new values, given by the user-made function.
+
+array_map() returns an array containing the results of applying the callback to the corresponding value of array 
+(and arrays if more arrays are provided) used as arguments for the callback. 
+The number of parameters that the callback function accepts should match the number of arrays passed to array_map(). 
+Excess input arrays are ignored. An ArgumentCountError is thrown if an insufficient number of arguments is provided.
+
+note: You can assign one array to the function, or as many as you like.
+Syntax
+array_map(myfunction, array1, array2, array3, ...)
+----------------------------------------------------------------------
+map() function
+Returns a new map for the passed elements.
+
+function map( $elements = [] ) : \Aimeos\Map
+@param mixed $elements List of elements or single value
+@return \Aimeos\Map Map instance
+Examples:
+
+// array
+map( [] );
+
+// null
+map( null );
+
+// scalar
+map( 'a' );
+
+// object
+map( new \stdClass() );
+
+// map object
+map( new Map() );
+
+// iterable object
+map( new ArrayObject() );
+
+// closure evaluated lazily
+map( function() {
+    return [];
+} );
+
+##############################################################################
+
+2- array_reduce:
+
+Definition and Usage:
+
+
+
+Note: If the array is empty and initial is not passed, this function returns NULL.
+
+Syntax
+array_reduce(array, myfunction, initial)
+(PHP 4 >= 4.0.5, PHP 5, PHP 7, PHP 8)
+
+
+Description:
+
+The array_reduce() function sends the values in an array to a user-defined function, and returns a string.
+
+array_reduce — Iteratively reduce the array to a single value using a callback function
+
+array_reduce(array $array, callable $callback, mixed $initial = null): mixed
+array_reduce() applies iteratively the callback function to the elements of the array, 
+so as to reduce the array to a single value.
+
+####################################################################################################
+
+3- PHP Filters: 
+
+Many web applications receive external input. External input/data can be:
+
+Validating data = Determine if the data is in proper form.
+
+Sanitizing data = Remove any illegal character from the data.
+
+The PHP Filter Extension
+PHP filters are used to validate and sanitize external input.
+
+The PHP filter extension has many of the functions needed for checking user input, and is designed to make data validation easier and quicker.
+
+The filter_list() function can be used to list what the PHP filter extension offers:
+
+<table>
+  <tr>
+    <td>Filter Name</td>
+    <td>Filter ID</td>
+  </tr>
+  <?php
+  foreach (filter_list() as $id =>$filter) {
+    echo '<tr><td>' . $filter . '</td><td>' . filter_id($filter) . '</td></tr>';
+  }
+  ?>
+</table>
+
+PHP filter_var() Function
+The filter_var() function both validate and sanitize data.
+
+The filter_var() function filters a single variable with a specified filter. It takes two pieces of data:
+
+The variable you want to check
+The type of check to use
+Sanitize a String
+
+The following example uses the filter_var() function to remove all HTML tags from a string:
+
+ExampleGet your own PHP Server
+<?php
+$str = "<h1>Hello World!</h1>";
+$newstr = filter_var($str, FILTER_SANITIZE_STRING);
+echo $newstr;
+?>
+
+
+
