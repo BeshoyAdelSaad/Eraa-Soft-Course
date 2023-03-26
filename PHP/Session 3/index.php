@@ -1031,14 +1031,16 @@
 
             <tr>
                 <td>Select Oprator</td>
-                <td><select name="op">
+                <td>
+                    <select name="op">
                     <option value="+">+</option>
                     <option value="-">-</option>
                     <option value="*">*</option>
                     <option value="/">/</option>
                     <option value="%">%</option>
                     <option value="**">**</option>
-                </select></td>
+                </select>
+            </td>
             </tr>
 
             <tr>
