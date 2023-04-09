@@ -1,6 +1,7 @@
 <?php 
 $rundom = "";
 $result = "";
+$factorialNum = "";
 
 function getrundom()
 {
@@ -60,13 +61,33 @@ function calculator($num1, $num2, $operator)
             break;
     }   
 }
+$rundomNum = rand(1,50);
+        $totalNum = 1;
+
+        function fac_Num_Rnd(int $rundom_Number)
+        {   global $totalNum;
+            if($rundom_Number == 0) return;
+            $totalNum *= $rundom_Number--;
+           fac_Num_Rnd($rundom_Number);
+
+           return $totalNum;
+        }
+    
 if(isset($_POST['submit']))
     {
         $code = calculator($_POST['num1'], $_POST['num2'], $_POST['operator']);
 
         $result = "<button class='btn w-50  btn-primary mt-4' >$code</button>";
 
-    }elseif (isset($_POST['rundom'])){$rundom = getrundom();}
+    }elseif (isset($_POST['rundom']))
+    {
+        $rundom = getrundom();
+    }elseif(isset($_GET['facrnd']))
+    {
+        $facRnd = fac_Num_Rnd($rundomNum);
+        $factorialNum .= "<h2>The factorial number is: $rundomNum</h2>
+        <h2>The Total foctorial is: $facRnd</h2>";
+    }
 
 ?>
 
@@ -117,10 +138,10 @@ if(isset($_POST['submit']))
         </div>
         <div class="col">
             <h2>See the result based on the dynamic numbers</h2>
-            <form action="" method="post" class="text-center">
+            <form action="" method="post" class="text-center my-4">
                 <button type="submit" name="rundom" class="btn w-50 btn-primary">Get rundom</button>
             </form>
-            <div><?php echo $rundom;?></div>
+            <div class="text-center"><?php echo $rundom;?></div>
         </div>
     </div>
 
@@ -128,10 +149,18 @@ if(isset($_POST['submit']))
 
     <div class="container my-5 rounded border border-primary bg-light p-4" >
     <h2>2. Write a PHP program to find factorial of a number using recursive function.</h2>
-    </div>
+    <hr>
+        <div class=" text-center h2 p-2 my-3 text-red">
+            The Result:
+        </div>
+        <form action="" method="get" class="text-center p-3 my-4 ">
+                <button type="submit" name="facrnd" class="btn w-50 btn-primary">Factorial Number Rundom</button>
+        </form>
+        <div>
+        <?php echo $factorialNum; ?>
+        </div>
+        </div>
 
-
-    <?php ?>
     
 </body>
 </html>
