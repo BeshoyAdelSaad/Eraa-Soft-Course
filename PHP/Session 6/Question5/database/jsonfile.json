@@ -1,0 +1,44 @@
+[
+    {
+        "name": "beshadel",
+        "email": "beshok",
+        "phone": "01019437564",
+        "password": "eeeeeeeee",
+        "password_confirmation": "eeeeeeeee"
+    },
+    {
+        "name": "besoiuy",
+        "email": "besho",
+        "phone": "09876543212",
+        "password": "rrrrrr",
+        "password_confirmation": "rrrrrr"
+    },
+    {
+        "name": "besho",
+        "email": "beshoj",
+        "phone": "01019437564",
+        "password": "rrrr",
+        "password_confirmation": "rrrr"
+    },
+    {
+        "name": "beshoadel",
+        "email": "beshoadelsaad@gmail.com",
+        "phone": "01019437564",
+        "password": "ttttt",
+        "password_confirmation": "ttttt"
+    },
+    {
+        "name": "beshoadel",
+        "email": "beshoadelsaad@gmail.com",
+        "phone": "01019437564",
+        "password": "ttttt",
+        "password_confirmation": "ttttt"
+    },
+    {
+        "name": "beshoadels",
+        "email": "beshoadelsaad@gmail.com",
+        "phone": "09876543212",
+        "password": "bbbbbb",
+        "password_confirmation": "bbbbbb"
+    }
+]

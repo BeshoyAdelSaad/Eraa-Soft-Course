@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../../mainFiles/css/bootstrap.min.css.map">
     <link rel="stylesheet" href="../../mainFiles/css/mycss.css">
 </head>
-<body>
+<body style="background-color: #8a2be2cc;">
     <div class="container my-5 mb-3 bg-light shadow p-3 rounded">
         <h1 class="text-center">Session 6</h1>
     </div>
@@ -199,10 +199,7 @@
                         <button class="btn btn-primary w-100 p-3 my-3 qbtn" onclick="show(this)" id="qq5">See The Question</button>
                     </div>
                     <div class="col">
-                        <button class="btn btn-primary p-3 w-100 my-3 qbtn" onclick="show(this)" id="qc5">See The Code</button>
-                    </div>
-                    <div class="col">
-                        <button class="btn btn-primary p-3 w-100 my-3 qbtn" onclick="show(this)" id="qs5">See Solution</button>
+                            <a href="../Session 6/Question5/auth/login.php" class="btn btn-primary p-3 w-100 my-3 q5">See Solution</a>
                     </div>
                     <div id="sqq5" class="my-1 hide h2 p-3 col-12 text-bg-light rounded shadow">
 
@@ -227,41 +224,11 @@
                         </li>
                     </ol>
 
-Save The Form Data in json file
-Check If the User authenticate using session, if not redirect to login page
-Make Login Form, Check if the user data exists in the json file
+                    Save The Form Data in json file
+                    Check If the User authenticate using session, if not redirect to login page
+                    Make Login Form, Check if the user data exists in the json file
                 </div>
-                    <div id="sqc5" class="my-1 hide col-12 text-bg-dark rounded shadow">
-<pre>
-    <code>
-    &lt;php&gt;
-        $my_text = 'The quick brown [fox].';
-        preg_match('#\[(.*?)\]#', $my_text, $match);
-        print $match[1]."\n";
-    &lt;/php&gt;
-    </code>
-</pre>
-                    </div>
-                    <div id="sqs5" class="my-1 hide h2 p-3 col-12 text-bg-light rounded shadow">
-                        The Solution:   
-                        <?php
-                        
-                        $my_text = 'The quick brown [fox].';
-                        preg_match('#\[(.*?)\]#', $my_text, $match);
-                        print $match[1]."\n";
-                        ?>
-                       
-                    </div>
                 </div>
-            </div> 
-        </div>
-    </div>
-
-    <div class="container my-4 mt-3 p-3 colection2">
-        <div class="row">
-            <button class="questions2">Tobic To Search</button>
-            <div class="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div> 
         </div>
     </div>
