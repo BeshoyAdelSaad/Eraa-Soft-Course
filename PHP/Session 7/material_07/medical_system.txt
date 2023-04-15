@@ -1,0 +1,27 @@
+Entities:
+---------
+1. doctor
+    - id
+    - name
+    - salary
+    - degree
+    - qualification
+    - specialization
+
+2. patient
+    - id
+    - SSN
+    - name
+    - date_of_birth
+    - phone
+    - age
+
+3. report
+    - id
+    - result
+    - prescriptions
+
+4. dependent
+    - id
+    - name
+    - relation
