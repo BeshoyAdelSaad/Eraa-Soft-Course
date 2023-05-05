@@ -11,7 +11,7 @@ include "../../Layouts/navegation.php";
         <input type="hidden" name="id" placeholder="id..." value="<?= $_GET['id'] ?>" />
         <input type="text" name="order_id" placeholder="Order Id..." value="<?= $_GET['order_id'] ?>" />
         <input type="text" name="product_id" placeholder="Product Id..." value="<?= $_GET['product_id'] ?>" />
-        <input type="number" name="product_quantity" placeholder="Product Quantit..." value="<?= $_GET['product_quantit'] ?>" />
+        <input type="number" name="product_quantity" placeholder="Product Quantity..." value="<?= $_GET['product_quantity'] ?>" />
         <input type="number" name="price" placeholder="price..." value="<?= $_GET['price'] ?>" />
         <input type="submit" class="sub-cr-cus" />
     </form>
