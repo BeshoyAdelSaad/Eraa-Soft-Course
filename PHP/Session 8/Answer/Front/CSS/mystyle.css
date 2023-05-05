@@ -1,0 +1,233 @@
+
+body {
+    margin: 0;
+    padding: 0;
+}
+/*
+Style For navegation file
+*/
+
+* {
+    box-sizing: border-box;
+}
+.navegation {
+    overflow: hidden;
+    background-color: #f1f1f1;
+} 
+
+ .navegation .nav-s {
+    float: left;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    transition: .3s;
+}
+.nav-e {
+    float: right;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    transition: .3s;
+}
+.navegation a:hover {
+    background-color: #ddd;
+}
+.navegation .active {
+    background-color: #ccc;
+}
+.tb-customer {
+    border: 1px solid;
+    width: 100%;
+    border-radius: 6px;
+}
+
+
+.div-table-customer {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+} 
+.div-table-categories {
+    width: 55%;
+    margin-left: auto;
+    margin-right: auto;
+} 
+.div-table-products {
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+} 
+.tr-customer td, .tr-customer th {
+    border: 1px solid white;
+    padding: 9px;
+}
+
+.tr-customer th {
+background-color: black;
+color: #FFF;
+}
+.tr-customer td {
+    background-color: #DDD;
+}
+
+.tr-customer td:hover {
+    color: red;
+}
+.tr-customer th:hover {
+    color: red;
+}
+
+.action {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.success {
+    padding: 6px;
+    background-color: rgb(5, 158, 5);
+    border: none;
+    color: #FFF;
+    border-radius: 6px;
+    width: 45%;
+    
+}
+.danger {
+    width: 45%;
+    padding: 6px;
+    background-color: rgb(213, 53, 9);
+    border: none;
+    color: #FFF;
+    border-radius: 6px;
+}
+.success-a {
+    width: 45%;
+    display: inline-block;
+    text-align: center;
+    margin: 0 2.5%;
+    padding: 6px;
+    background-color: rgb(5, 158, 5);
+    border: none;
+    color: #FFF;
+    border-radius: 6px;
+    text-decoration: none;
+    
+}
+.danger-a {
+    display: inline-block;
+    text-align: center;
+    width: 45%;
+    text-decoration: none;
+    padding: 6px;
+    background-color: rgb(213, 53, 9);
+    border: none;
+    color: #FFF;
+    border-radius: 6px;
+}
+
+.success:hover {
+    background-color: rgb(4, 110, 4);
+}
+.danger:hover {
+    background-color: rgb(157, 38, 5);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.c-customer:hover {
+    background-color: rgb(4, 142, 4);
+}
+
+
+.c-customer {
+    
+    background-color: rgb(5, 158, 5);
+    border: none;
+    color: #FFF;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 10px;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.create-customer-d {
+    width: 40%;
+    box-shadow: 0 0 23px -11px black,
+        0 0 41px -31px gray;
+    margin: auto;
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 40px;
+}
+.create-customer-d input {
+    width: 100%;
+    padding: 8px 12px;
+    margin-bottom: 15px;
+    outline: none;
+}
+
+.p-2 {
+    padding: 4px;
+}
+.p-3 {
+    padding: 6px;
+}
+.p-4 {
+    padding: 8px;
+}
+.p-5 {
+    padding: 10px;
+}
+.p-6 {
+    padding: 12px;
+}
+.p-7 {
+    padding: 14px;
+}
+.p-8 {
+    padding: 16px;
+}
+.p-9 {
+    padding: 18px;
+}
+.p-10 {
+    padding: 20px;
+}
+.create-customer-d .sub-cr-cus {
+    background-color: rgb(5, 158, 5);
+    border: none;
+    color: #FFF;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    
+}
+
+.create-customer-d .sub-cr-cus:hover {
+    background-color: rgb(4, 142, 4);
+}
+
+.form-edit {
+    margin: 4px;
+    /* display: inline; */
+}
+
+.message-d {
+    /* background-color: rgb(58, 38, 208); */
+    background-color: #4de889;
+    width: 50%;
+    margin: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 18px -6px black;
+}
+.message-p {
+    padding: 14px;
+    text-align: center;
+}
