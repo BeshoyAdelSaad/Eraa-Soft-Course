@@ -3,7 +3,7 @@ $(document).ready(function(){
  
     const message = $('#message-alert');
     if (message) {
-        setTimeout(() => message.fadeOut(1000), 5000);
+        setTimeout(() => message.fadeOut(1000), 4000);
     }
     
 });

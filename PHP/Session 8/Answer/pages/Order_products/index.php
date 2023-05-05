@@ -1,6 +1,6 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) session_start();
-require '../../Logic/Orders/all.php';
+require '../../Logic/Order_products/all.php';
 include "../../Layouts/init_public.php";
 include "../../Layouts/header.php";
 include "../../Layouts/navegation.php";
@@ -24,17 +24,17 @@ include "../../Layouts/navegation.php";
     }
     ?>
 </h2>
-<h1 class="text-center">All Orders</h1>
-<div class="div-table-customer">
-    <a class="c-customer" href="create.php">Create New Order</a>
+<h1 class="text-center">All Order Products</h1>
+<div class="div-table-products">
+    <a class="c-customer" href="create.php">Create New Order Products</a>
     <table class="tb-customer">
         <thead>
             <tr class="tr-customer">
                 <th>ID</th>
-                <th>Customer ID</th>
-                <th>Total</th>
-                <th>Shipping Address Id</th>
-                <th>Status</th>
+                <th>Order ID</th>
+                <th>Product ID</th>
+                <th>Product Quantit</th>
+                <th>Price</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -47,13 +47,13 @@ include "../../Layouts/navegation.php";
             ?>
                     <tr class="tr-customer">
                         <td><?= $row["id"] ?></td>
-                        <td><?= $row["customer_id"] ?></td>
-                        <td><?= $row["total"] ?></td>
-                        <td><?= $row["shipping_address_id"] ?></td>
-                        <td><?= $row["status"] ?></td>
+                        <td><?= $row["order_id"] ?></td>
+                        <td><?= $row["product_id"] ?></td>
+                        <td><?= $row["product_quantity"] ?></td>
+                        <td><?= $row["price"] ?></td>
                         <td>
-                            <a class='success-a' href="../../Logic/Orders/edit.php?id=<?= $row['id'] ?>">Edit</a>
-                            <a class='danger-a' href="../../Logic/Orders/delete.php?id=<?= $row['id'] ?>">Delete</a>
+                            <a class='success-a' href="../../Logic/Order_products/edit.php?id=<?= $row['id'] ?>">Edit</a>
+                            <a class='danger-a' href="../../Logic/Order_products/delete.php?id=<?= $row['id'] ?>">Delete</a>
                         </td>
                     </tr>
             <?php
@@ -64,6 +64,8 @@ include "../../Layouts/navegation.php";
         </tbody>
     </table>
 </div>
+
 <?php
+
 include '../../Layouts/footer.php';
 ?>

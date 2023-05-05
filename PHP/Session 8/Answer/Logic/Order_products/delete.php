@@ -7,12 +7,12 @@ if (session_status() === PHP_SESSION_NONE) session_start();
         
         $id = $_GET['id'];
         
-        $query = "DELETE FROM orders WHERE id = $id"; 
+        $query = "DELETE FROM order_products WHERE id = $id"; 
 
         if(mysqli_query($connection, $query)){
 
-        $_SESSION['message'] = "Your Order was removed successfully";
-        header('Location: ../../pages/Orders/index.php');
+        $_SESSION['message'] = "Your Order Products was removed successfully";
+        header('Location: ../../pages/Order_products/index.php');
         mysqli_close($connection);
         exit();
     } else {

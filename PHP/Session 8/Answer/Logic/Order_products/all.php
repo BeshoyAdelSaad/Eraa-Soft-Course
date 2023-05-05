@@ -3,7 +3,7 @@ if (session_status() === PHP_SESSION_NONE) session_start();
 
 include '../../logic/connection.php';
 
-$query = "SELECT * FROM orders";
+$query = "SELECT * FROM order_products";
 
 $data = mysqli_query($connection, $query);
 

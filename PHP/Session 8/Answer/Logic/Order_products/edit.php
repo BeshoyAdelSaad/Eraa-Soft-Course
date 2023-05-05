@@ -7,12 +7,12 @@
         $arr = array();
         foreach($_POST as $key => $value) $arr[$key] = $value;
 
-    $query = "UPDATE orders SET customer_id='{$arr['customer_id']}', total= '{$arr['total']}', shipping_address_id= '{$arr['shipping_address_id']}', status= '{$arr['status']}' WHERE id='{$arr['id']}'";
+    $query = "UPDATE order_products SET order_id='{$arr['order_id']}', product_id= '{$arr['product_id']}', product_quantit= '{$arr['product_quantit']}', price= '{$arr['price']}' WHERE id='{$arr['id']}'";
 
     if(mysqli_query($connection, $query)){
-        $_SESSION['message'] = 'Your Order was updated in the database successfully';
+        $_SESSION['message'] = 'Your Order Products was updated in the database successfully';
         $connection->close();
-        header('Location: ../../pages/Orders/index.php');
+        header('Location: ../../pages/Order_products/index.php');
         exit();
     }
     }elseif($_GET['id']) {
@@ -20,12 +20,12 @@
 
             $id = $_GET['id'];         
             
-            $query = "SELECT * FROM orders WHERE id = '$id'";
+            $query = "SELECT * FROM order_products WHERE id = '$id'";
             $result = mysqli_query($connection, $query);
             if($result->num_rows > 0 ){
                 $customer = $result->fetch_assoc();
                 mysqli_close($connection);
-                header('Location: ../../pages/Orders/edit.php?'. http_build_query($customer));
+                header('Location: ../../pages/Order_products/edit.php?'. http_build_query($customer));
                 exit();
                 
             }else {
