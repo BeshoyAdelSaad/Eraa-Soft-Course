@@ -7,6 +7,8 @@ require_once '../Functions/redirect.php';
 // check if the method is POST or not (method post is required)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+    foreach($_POST as $k => $v) $_SESSION['old_'.$k] = $v;
+
     foreach ($_POST as $key => $value) $inputs[$key] = sanitization($value);
 
     // Validation For All inputs
@@ -27,24 +29,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             unique('users', 'phone', $value);
         }
 
-        if ($key == 'password') pass_confirm($value, $form_inputs['password_confirmation']);
+        if ($key == 'password') pass_confirm($value, $inputs['password_confirmation']);
         empty_input($key, $value);
         if ($key == "password_confirmation") continue;
     }
 
     if (!empty($_SESSION['errors'])) redirect('pages/Auth/register');
 
+    foreach ($_POST as $k => $v) unset($_SESSION['old_'.$k]);
 
     include '../connection.php';
 
     $query = "INSERT INTO users 
         VALUES ('', 
-            {$inputs['f_name']}, 
-            {$inputs['l_name']}, 
-            {$inputs['email']}, 
-            {$inputs['phone']}, 
-            {$inputs['password']}, 
-            {$inputs['gender']})";
+            '{$inputs['f_name']}', 
+            '{$inputs['l_name']}', 
+            '{$inputs['email']}', 
+            '{$inputs['phone']}', 
+            '{$inputs['password']}', 
+            '{$inputs['gender']}')";
 
     $sql = mysqli_query($connection, $query);
 

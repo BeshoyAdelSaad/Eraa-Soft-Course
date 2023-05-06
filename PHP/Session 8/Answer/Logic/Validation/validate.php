@@ -31,7 +31,7 @@ function unique($table, $column, $val)
 
 function phone($key, $val)
 {
-    if ((strlen($val) !== 11) || $val[0] !== 0) $_SESSION['errors'][$key] = "Sorry, Please enter a valid phone number";
+    if ((strlen($val) !== 11) && $val[0] !== 0) $_SESSION['errors'][$key] = "Sorry, Please enter a valid phone number";
 }
 
 function pass_confirm($val, $val_confirm)

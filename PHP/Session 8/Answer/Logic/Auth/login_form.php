@@ -1,5 +1,6 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) session_start();
+
 include '../Validation/sanitizer.php';
 include '../Validation/validate.php';
 include '../functions/redirect.php';

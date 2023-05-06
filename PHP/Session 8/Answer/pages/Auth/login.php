@@ -1,5 +1,7 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) session_start();
+include '../../Logic/Functions/redirect.php';
+if (isset($_SESSION['login'])) redirect('index');
 include "../../Layouts/init.php";
 include "../../Logic/Functions/handle_error.php";
 include "../../Layouts/header.php";
@@ -12,7 +14,7 @@ include "../../Layouts/navegation.php";
     <form action="<?= $root ?>Logic/Auth/login_form.php" method="post">
         <div class="mb-3">
             <label for="email" class="form-label">Email/Phone :</label>
-            <input type="text" class="form-control" name="email" id="email" placeholder="Enter Your Email Or Phone">
+            <input type="text" class="form-control" name="email" value="<?php old('email'); ?>" placeholder="Enter Your Email Or Phone">
             <div class="msg-error"><?php errors('email'); ?></div>
         </div>
         <div class="mb-3">

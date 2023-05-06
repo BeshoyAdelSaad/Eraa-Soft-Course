@@ -1,5 +1,7 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) session_start();
+include '../../Logic/Functions/redirect.php';
+if (isset($_SESSION['login'])) redirect('index');
 include "../../Layouts/init.php";
 include "../../Layouts/header.php";
 include "../../Layouts/navegation.php";
@@ -11,27 +13,27 @@ include "../../Logic/Functions/handle_error.php";
     <h2 class="text-center shadow-sm rounded  p-2 mb-2">Create Account</h2>
     <form action="<?= $root ?>/Logic/Auth/register_form.php" method="post">
         <div class="w-50 left">
-            <input type="text" class="form-control" name="f_name" placeholder="First Name...">
+            <input type="text" class="form-control" name="f_name" value="<?php old('f_name'); ?>" placeholder="First Name...">
             <div class="msg-error"><?php errors('f_name'); ?></div>
         </div>
         <div class="w-50 right">
-            <input type="text" class="form-control" name="l_name" placeholder="Last Name...">
+            <input type="text" class="form-control" name="l_name" value="<?php old('l_name'); ?>" placeholder="Last Name...">
             <div class="msg-error"><?php errors('l_name'); ?></div>
         </div>
         <div class="">
-            <input type="email" class="form-control" name="email" placeholder="Email...">
+            <input type="email" class="form-control" name="email" value="<?php old('email'); ?>" placeholder="Email...">
             <div class="msg-error"><?php errors('email'); ?></div>
         </div>
         <div class="">
-            <input type="text" class="form-control" name="phone" placeholder="Phone Number...">
+            <input type="text" class="form-control" name="phone" value="<?php old('phone'); ?>" placeholder="Phone Number...">
             <div class="msg-error"><?php errors('phone'); ?></div>
         </div>
         <div class="">
-            <select name="gender" class="form-select" id="">
-                <option value="" disabled selected>Gender</option>
+            <select name="gender" class="form-select" id="gender">
+                <option value="">Gender</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
-                <option value="female">Custome</option>
+                <option value="Custome">Custome</option>
             </select>
             <div class="msg-error"><?php errors('gender'); ?></div>
         </div>

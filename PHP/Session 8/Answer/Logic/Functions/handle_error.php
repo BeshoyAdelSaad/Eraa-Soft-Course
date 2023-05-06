@@ -9,3 +9,12 @@ function errors($input_name)
         }
     }
 }
+
+function old($input_name)
+{
+
+    if (isset($_SESSION['old_' . $input_name])) {
+        echo "{$_SESSION['old_' .$input_name]}";
+        unset($_SESSION['old_' . $input_name]);
+    }
+}
