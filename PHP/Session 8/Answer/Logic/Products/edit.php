@@ -11,7 +11,7 @@
 
     if(mysqli_query($connection, $query)){
         $_SESSION['message'] = 'The Product was updated in the database successfully';
-        $connection->close();
+        mysqli_close($connection);
         header('Location: ../../pages/Products/index.php');
         exit();
     }

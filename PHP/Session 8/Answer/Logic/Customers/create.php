@@ -10,10 +10,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 
     $query = "INSERT INTO customers VALUES ('', '$name', '$address', '$tel', '$email')";
     mysqli_query($connection, $query);
+    mysqli_close($connection);
     
     $_SESSION['message'] = 'The Customer recorded in the database successfully';
     header('Location: ../../pages/Customers/index.php');
-    $connection->close();
     exit();
 
 }else{

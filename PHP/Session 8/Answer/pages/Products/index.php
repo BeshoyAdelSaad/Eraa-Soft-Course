@@ -1,7 +1,7 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) session_start();
 require '../../Logic/Products/all.php';
-include "../../Layouts/init_public.php";
+include "../../Layouts/init.php";
 include "../../Layouts/header.php";
 include "../../Layouts/navegation.php";
 ?>
@@ -12,15 +12,13 @@ include "../../Layouts/navegation.php";
         echo "<div id='message-alert' class='message-d'>" .
             "<p class='message-p'>" . $_SESSION['message'] . "</p>" .
             "</div>";
-        session_unset();
-        session_destroy();
+        unset($_SESSION['message']);
     }
     if (isset($_SESSION['empty'])) {
         echo "<div id='message-alert' class='message-d'>" .
             "<p class='message-p'>" . $_SESSION['empty'] . "</p>" .
             "</div>";
-        session_unset();
-        session_destroy();
+        unset($_SESSION['empty']);
     }
     ?>
 </h2>

@@ -11,7 +11,7 @@
 
     if(mysqli_query($connection, $query)){
         $_SESSION['message'] = 'The Customer was updated in the database successfully';
-        $connection->close();
+        mysqli_close($connection);
         header('Location: ../../pages/Customers/index.php');
         exit();
     }

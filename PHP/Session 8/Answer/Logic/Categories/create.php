@@ -8,10 +8,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 
     $query = "INSERT INTO categories VALUES ('', '$name')";
     mysqli_query($connection, $query);
+    mysqli_close($connection);
     
     $_SESSION['message'] = 'The Category recorded in the database successfully';
     header('Location: ../../pages/Categories/index.php');
-    $connection->close();
     exit();
 
 }else{

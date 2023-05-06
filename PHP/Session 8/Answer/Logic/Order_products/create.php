@@ -10,10 +10,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 
     $query = "INSERT INTO order_products VALUES ('', '$order_id', '$product_id', '$product_quantity', '$price')";
     mysqli_query($connection, $query);
+    mysqli_close($connection);
     
     $_SESSION['message'] = 'Your Order Products recorded in the database successfully';
     header('Location: ../../pages/Order_products/index.php');
-    $connection->close();
     exit();
 
 }else {

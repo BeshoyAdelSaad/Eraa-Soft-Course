@@ -1,10 +1,55 @@
 <?php
-include "../../Layouts/init_public.php";
+if (session_status() == PHP_SESSION_NONE) session_start();
+include "../../Layouts/init.php";
 include "../../Layouts/header.php";
 include "../../Layouts/navegation.php";
+include "../../Logic/Functions/handle_error.php";
 ?>
 
-<h1 class="text-center bg-success p-2">Register page</h1>
+
+<div class="shadow rounded border main-container">
+    <h2 class="text-center shadow-sm rounded  p-2 mb-2">Create Account</h2>
+    <form action="<?= $root ?>/Logic/Auth/register_form.php" method="post">
+        <div class="w-50 left">
+            <input type="text" class="form-control" name="f_name" placeholder="First Name...">
+            <div class="msg-error"><?php errors('f_name'); ?></div>
+        </div>
+        <div class="w-50 right">
+            <input type="text" class="form-control" name="l_name" placeholder="Last Name...">
+            <div class="msg-error"><?php errors('l_name'); ?></div>
+        </div>
+        <div class="">
+            <input type="email" class="form-control" name="email" placeholder="Email...">
+            <div class="msg-error"><?php errors('email'); ?></div>
+        </div>
+        <div class="">
+            <input type="text" class="form-control" name="phone" placeholder="Phone Number...">
+            <div class="msg-error"><?php errors('phone'); ?></div>
+        </div>
+        <div class="">
+            <select name="gender" class="form-select" id="">
+                <option value="" disabled selected>Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="female">Custome</option>
+            </select>
+            <div class="msg-error"><?php errors('gender'); ?></div>
+        </div>
+        <div class="">
+            <input type="password" class="form-control" name="password" placeholder="Password">
+            <div class="msg-error"><?php errors('password'); ?></div>
+        </div>
+        <div class="">
+            <input type="password" class="form-control" name="password_confirmation" placeholder="Password Confirmation">
+        </div>
+        <div class="">
+            <div>
+                <input type="submit" class="w-100 p-2 my-3 btn btn-primary" value="Register">
+                <a href="login.php" class="a-btn-right">Already have an account? Sign in</a>
+            </div>
+        </div>
+    </form>
+</div>
 
 <?php
 include '../../Layouts/footer.php';

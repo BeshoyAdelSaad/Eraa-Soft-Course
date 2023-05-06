@@ -11,7 +11,7 @@
 
     if(mysqli_query($connection, $query)){
         $_SESSION['message'] = 'Your Order was updated in the database successfully';
-        $connection->close();
+        mysqli_close($connection);
         header('Location: ../../pages/Orders/index.php');
         exit();
     }

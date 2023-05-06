@@ -10,8 +10,8 @@
     $query = "UPDATE categories SET name='{$arr['name']}' WHERE id='{$arr['id']}'";
 
     if(mysqli_query($connection, $query)){
+        mysqli_close($connection);
         $_SESSION['message'] = 'The Category was updated in the database successfully';
-        $connection->close();
         header('Location: ../../pages/Categories/index.php');
         exit();
     }

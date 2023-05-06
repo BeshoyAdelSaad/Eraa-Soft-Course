@@ -1,5 +1,5 @@
 <?php
-include "../../Layouts/init_public.php";
+include "../../Layouts/init.php";
 include "../../Layouts/header.php";
 include "../../Layouts/navegation.php";
 ?>

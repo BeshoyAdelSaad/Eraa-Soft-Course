@@ -11,9 +11,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
     $query = "INSERT INTO orders VALUES ('', '$customer_id', '$total', '$shipping_address_id', '$status')";
     mysqli_query($connection, $query);
     
+    mysqli_close($connection);
     $_SESSION['message'] = 'Your Order recorded in the database successfully';
     header('Location: ../../pages/Orders/index.php');
-    $connection->close();
     exit();
 
 }else {
