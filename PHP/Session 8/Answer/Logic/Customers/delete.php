@@ -1,20 +1,20 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) session_start();
+include '../Functions/redirect.php';
 
-    if($_SERVER['REQUEST_METHOD'] === 'GET'){
-       
-        require "../connection.php";
-        
-        $id = $_GET['id'];
-        
-        $query = "DELETE FROM customers WHERE id = $id"; 
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
-        if(mysqli_query($connection, $query)){
+    require "../connection.php";
 
-        $_SESSION['message'] = "The Customer was deleted successfully";
-        header('Location: ../../pages/Customers/index.php');
+    $id = $_GET['id'];
+
+    $query = "DELETE FROM customers WHERE id = $id";
+
+    if (mysqli_query($connection, $query)) {
+
         mysqli_close($connection);
-        exit();
+        $_SESSION['message'] = "The Customer was deleted successfully";
+        redirect('pages/Customers/index');
     } else {
         echo "Error deleting record: " . mysqli_error($conn);
     }

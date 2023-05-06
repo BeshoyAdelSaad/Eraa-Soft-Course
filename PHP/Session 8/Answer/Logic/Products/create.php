@@ -1,5 +1,7 @@
 <?php 
 if(session_status() === PHP_SESSION_NONE) session_start();
+include '../Functions/redirect.php';
+
 if($_SERVER['REQUEST_METHOD'] === 'POST')
 {
     require '../connection.php';
@@ -12,14 +14,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
     mysqli_close($connection);
     
     $_SESSION['message'] = 'The Product recorded in the database successfully';
-    header('Location: ../../pages/Products/index.php');
-    exit();
+    redirect('pages/Products/index');
 
 }else{
     echo 'Something Went Wrong!';
     
 }
-
-
-
-?>

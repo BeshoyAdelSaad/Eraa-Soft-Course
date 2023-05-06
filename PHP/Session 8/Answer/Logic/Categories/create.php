@@ -1,5 +1,7 @@
 <?php 
 if(session_status() === PHP_SESSION_NONE) session_start();
+include '../Functions/redirect.php';
+
 if($_SERVER['REQUEST_METHOD'] === 'POST')
 {
     require '../connection.php';
@@ -11,13 +13,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
     mysqli_close($connection);
     
     $_SESSION['message'] = 'The Category recorded in the database successfully';
-    header('Location: ../../pages/Categories/index.php');
-    exit();
+    redirect('pages/Categories/index');
+ 
 
 }else{
     $message =  'Something Went Wrong!';
-    header("Location: ../../pages/notFound.php?message=" . $message);
-    exit();
+    redirect("pages/notFound","?message=" . $message);
 }
 
 

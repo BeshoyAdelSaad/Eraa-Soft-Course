@@ -1,20 +1,20 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) session_start();
+include '../Functions/redirect.php';
 
-    if($_SERVER['REQUEST_METHOD'] === 'GET'){
-       
-        require "../connection.php";
-        
-        $id = $_GET['id'];
-        
-        $query = "DELETE FROM products WHERE id = $id"; 
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
-        if(mysqli_query($connection, $query)){
+    require "../connection.php";
 
-        $_SESSION['message'] = "The Product was deleted successfully";
-        header('Location: ../../pages/Products/index.php');
+    $id = $_GET['id'];
+
+    $query = "DELETE FROM products WHERE id = $id";
+
+    if (mysqli_query($connection, $query)) {
+
         mysqli_close($connection);
-        exit();
+        $_SESSION['message'] = "The Product was deleted successfully";
+        redirect('pages/Products/index');
     } else {
         echo "Error deleting record: " . mysqli_error($conn);
     }

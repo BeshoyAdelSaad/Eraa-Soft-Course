@@ -1,5 +1,7 @@
 <?php 
 if(session_status() === PHP_SESSION_NONE) session_start();
+include '../Functions/redirect.php';
+
 if($_SERVER['REQUEST_METHOD'] === 'POST')
 {
     require '../connection.php';
@@ -13,14 +15,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
     mysqli_close($connection);
     
     $_SESSION['message'] = 'The Customer recorded in the database successfully';
-    header('Location: ../../pages/Customers/index.php');
-    exit();
+    redirect('pages/Customers/index');
 
 }else{
     echo 'Something Went Wrong!';
     
 }
-
-
-
-?>
